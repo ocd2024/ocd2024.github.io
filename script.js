@@ -992,27 +992,6 @@ Hedgehog.prototype.nod = function(){
   }});
 }
 
-// Assuming you have a font loaded as `font`
-var loader = new THREE.FontLoader();
-loader.load('font.json', function(font) {
- var textGeometry = new THREE.TextGeometry('Attention', {
-    font: font,
-    size: 25,
-    height: 0.1,
- });
-
- var textMaterial = new THREE.MeshBasicMaterial({color: 0xff0000});
- var textMesh = new THREE.Mesh(textGeometry, textMaterial);
-
- // Position the text above the hedgehog
- textMesh.position.set(10, 10, 10); // Adjust position as needed
-
- // Add the text to the scene
- scene.add(textMesh);
-});
-
-
-
 function createHero() {
   hero = new Hero();
   hero.mesh.rotation.y = Math.PI/2;
@@ -1313,6 +1292,33 @@ function initUI(){
   fieldGameOver = document.getElementById("gameoverInstructions");
   
 }
+// Assuming you have a clock object initialized as:
+var clock = new THREE.Clock();
+
+// Function to pause the animation
+function pauseAnimation() {
+ clock.running = false;
+}
+
+// Function to resume the animation
+function resumeAnimation() {
+ clock.start();
+}
+
+// In your animation loop, use the clock's delta to update animations
+function animate() {
+ requestAnimationFrame(animate);
+ var delta = clock.getDelta();
+
+ // Update your animations here using the delta
+ // For example, hero.run(delta);
+
+ renderer.render(scene, camera);
+}
+
+// Call animate to start the animation loop
+animate();
+
 
 
 
