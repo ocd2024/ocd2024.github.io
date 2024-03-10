@@ -1292,35 +1292,6 @@ function initUI(){
   fieldGameOver = document.getElementById("gameoverInstructions");
   
 }
-// Assuming you have a clock object initialized as:
-var clock = new THREE.Clock();
-
-// Function to pause the animation
-function pauseAnimation() {
- clock.running = false;
-}
-
-// Function to resume the animation
-function resumeAnimation() {
- clock.start();
-}
-
-// In your animation loop, use the clock's delta to update animations
-function animate() {
- requestAnimationFrame(animate);
- var delta = clock.getDelta();
-
- // Update your animations here using the delta
- // For example, hero.run(delta);
-
- renderer.render(scene, camera);
-}
-
-// Call animate to start the animation loop
-animate();
-
-
-
 
 ////////////////////////////////////////////////
 //                                        MODELS
