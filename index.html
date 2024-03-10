@@ -7,7 +7,7 @@
   <body>
 <div style="width: 99%; height: 98%;" id="world" />
 <div id="gameoverInstructions">
-    <p 
+    <p id="myText"
         style="
         color: rgb(76, 248, 90);
         ">
@@ -20,11 +20,21 @@
               Let's try to beat the thought
       </p>
 </div>
+  <script>
+  // Get the text element
+  var textElement = document.getElementById("myText");
+
+  // Set a timeout to make the text disappear after 4 seconds
+  setTimeout(function() {
+    textElement.style.display = "none";
+  }, 4000); // Disappear after 4 seconds
+</script>
 
 <div id="dist" style="top:85%">
     <div  style="
         color: black;
-        "> class="label">Your Ability</div>
+        font-size: x-large;'
+        class="label">Your Ability</div>
     <div id="distValue">000</div>
 </div>
 <!-- <button id="startButton">Start</button>
