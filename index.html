@@ -1,13 +1,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Carrot Runner</title>
+    <title>OCD Manager</title>
     <link rel="stylesheet" href="style.scss">
   </head>
   <body>
 <div style="width: 99%; height: 98%;" id="world" />
 <div id="gameoverInstructions">
-    <p id="myText"
+    <p
         style="
         color: rgb(76, 248, 90);
         ">
@@ -15,20 +15,12 @@
       </p>
     <p 
         style="
-        color: orangered;  
+        color: orangered;
+        font_size: 5rem;
         id="gameoverInstructionsValue">
               Let's try to beat the thought
       </p>
 </div>
-  <script>
-  // Get the text element
-  var textElement = document.getElementById("myText");
-
-  // Set a timeout to make the text disappear after 4 seconds
-  setTimeout(function() {
-    textElement.style.display = "none";
-  }, 4000); // Disappear after 4 seconds
-</script>
 
 <div id="dist" style="top:85%">
     <div  style="
