@@ -1005,7 +1005,7 @@ loader.load('font.json', function(font) {
  var textMesh = new THREE.Mesh(textGeometry, textMaterial);
 
  // Position the text above the hedgehog
- textMesh.position.set(5, 10, 10); // Adjust position as needed
+ textMesh.position.set(10, 10, 10); // Adjust position as needed
 
  // Add the text to the scene
  scene.add(textMesh);
