@@ -1,34 +1,49 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>OCD Game</title>
+    <title>Carrot Runner</title>
     <link rel="stylesheet" href="style.scss">
   </head>
   <body>
+<div style="width: 80%; height: 98%;" id="world" />
+<div id="gameoverInstructions">
+    <p 
+        style="
+        color: rgb(76, 248, 90); 
+        font-size: large;
+        ">
+              Caught you, your thoughts
+      </p>
+    <p 
+        style="
+        color: orangered; 
+        font-size: large;" 
+        id="gameoverInstructionsValue">
+              Let's try to beat the thought
+      </p>
+</div>
+
+<div id="dist" style="top:85%">
+    <div class="label">Your Ability</div>
+    <div id="distValue">000</div>
+</div>
+<!-- <button id="startButton">Start</button>
+<button id="pauseButton">Pause</button> -->
+
+
+<!-- <div id="instructions">Click to jump<span class="lightInstructions"> — Grab the carrots / avoid the hedgehogs</span></div> -->
+
+
+<!-- <div id="credits">
+  <p><a href="https://codepen.io/Yakudoo/" target="blank">other codepens</a> | <a href="https://www.epic.net" target="blank">epic.net</a></p>
+  
+</div> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.sound.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r80/three.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/OrbitControls.js"></script>
-      <script src="script.js"></script>
-
-<div id="world" />
-<div id="gameoverInstructions">
-    <h4 style="color: rgb(47, 189, 255);">Caught you, your thoughts</h4>
-    <h6 style="color: orangered;" id="gameoverInstructionsValue">Let's try to beat the thought</h6>
-</div>
-<div id="dist">
-    <div class="label">Your Ability</div>
-    <div id="distValue">000</div>
-</div>
-
-
-<!-- <div id="instructions">Click to jump<span class="lightInstructions"> — Grab the carrots / avoid the hedgehogs</span></div>
-
-
-<div id="credits">
-  <p><a href="https://codepen.io/Yakudoo/" target="blank">other codepens</a> | <a href="https://www.epic.net" target="blank">epic.net</a></p>
-</div> -->
+    <script src="script.js"></script>
 </body>
 </html>

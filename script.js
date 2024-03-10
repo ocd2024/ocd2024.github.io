@@ -992,6 +992,27 @@ Hedgehog.prototype.nod = function(){
   }});
 }
 
+// // Assuming you have a font loaded as `font`
+// var loader = new THREE.FontLoader();
+// loader.load('font.json', function(font) {
+//  var textGeometry = new THREE.TextGeometry('Attention', {
+//     font: font,
+//     size: 20,
+//     height: 0.1,
+//  });
+
+//  var textMaterial = new THREE.MeshBasicMaterial({color: 0xff0000});
+//  var textMesh = new THREE.Mesh(textGeometry, textMaterial);
+
+//  // Position the text above the hedgehog
+//  textMesh.position.set(10, 10, 10); // Adjust position as needed
+
+//  // Add the text to the scene
+//  scene.add(textMesh);
+// });
+
+
+
 function createHero() {
   hero = new Hero();
   hero.mesh.rotation.y = Math.PI/2;
@@ -1292,6 +1313,8 @@ function initUI(){
   fieldGameOver = document.getElementById("gameoverInstructions");
   
 }
+
+
 
 ////////////////////////////////////////////////
 //                                        MODELS
