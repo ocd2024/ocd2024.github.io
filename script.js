@@ -22,7 +22,7 @@ var floorRotation = 0;
 var collisionObstacle = 10;
 var collisionBonus = 20;
 var gameStatus = "play";
-var cameraPosGame = 160;
+var cameraPosGame = 220;
 var cameraPosGameOver = 260;
 var monsterAcceleration = 0.004;
 var malusClearColor = 0xb44b39;
@@ -112,8 +112,8 @@ function initScreenAnd3D() {
   );
   camera.position.x = 0;
   camera.position.z = cameraPosGame;
-  camera.position.y = 30;
-  camera.lookAt(new THREE.Vector3(0, 30, 0));
+  camera.position.y = 0;
+  camera.lookAt(new THREE.Vector3(10, 40, 0));
 
   renderer = new THREE.WebGLRenderer({
     alpha: true,
@@ -143,6 +143,9 @@ function initScreenAnd3D() {
   clock = new THREE.Clock();
 
 }
+
+
+
 
 function handleWindowResize() {
   HEIGHT = window.innerHeight;
