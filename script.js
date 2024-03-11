@@ -13,9 +13,9 @@ var speed = 6;
 var distance = 0;
 var level = 1;
 var levelInterval;
-var levelUpdateFreq = 5000;
+var levelUpdateFreq = 3000;
 var initSpeed = 5;
-var maxSpeed = 40;
+var maxSpeed = 48;
 var monsterPos = .65;
 var monsterPosTarget = .65;
 var floorRotation = 0;
@@ -27,9 +27,9 @@ var cameraPosGameOver = 260;
 var monsterAcceleration = 0.004;
 var malusClearColor = 0xb44b39;
 var malusClearAlpha = 0;
-var audio = new Audio('https://firebasestorage.googleapis.com/v0/b/ocd-project-c9444.appspot.com/o/best-adventure-ever-122726.mp3?alt=media&token=7adf18d5-b75a-4517-a49c-71dbb38c7f3e');
+var audio = new Audio('https://firebasestorage.googleapis.com/v0/b/ocd-project-c9444.appspot.com/o/alexander-nakarada-silly.mp3?alt=media&token=3200e721-920b-42f9-abaa-1468968b9bb9');
 
-var fieldGameOver, fieldDistance;
+var fieldGameOver, fieldDistance, fieldGameWin;
 
 //SCREEN & MOUSE VARIABLES
 
@@ -138,7 +138,7 @@ function initScreenAnd3D() {
   // controls.maxPolarAngle = Math.PI / 2;
   // controls.noZoom = true;
   // controls.noPan = true;
-  //
+  
   
   clock = new THREE.Clock();
 
@@ -992,25 +992,6 @@ Hedgehog.prototype.nod = function(){
   }});
 }
 
-// // Assuming you have a font loaded as `font`
-// var loader = new THREE.FontLoader();
-// loader.load('font.json', function(font) {
-//  var textGeometry = new THREE.TextGeometry('Attention', {
-//     font: font,
-//     size: 20,
-//     height: 0.1,
-//  });
-
-//  var textMaterial = new THREE.MeshBasicMaterial({color: 0xff0000});
-//  var textMesh = new THREE.Mesh(textGeometry, textMaterial);
-
-//  // Position the text above the hedgehog
-//  textMesh.position.set(10, 10, 10); // Adjust position as needed
-
-//  // Add the text to the scene
-//  scene.add(textMesh);
-// });
-
 
 
 function createHero() {
@@ -1044,6 +1025,21 @@ function updateMonsterPosition(){
   monster.mesh.rotation.z = -Math.PI/2 + angle;
 }
 
+function gameWin(){
+  fieldGameWin.className = "winshow";
+  gameStatus = "gameOver";
+  // monster.sit();
+  // hero.hang();
+  hero.mesh.visible = true;
+  monster.mesh.visible = false;
+  // monster.heroHolder.add(hero.mesh);
+  TweenMax.to(this, 1, {speed:0});
+  TweenMax.to(camera.position, 6, {z:cameraPosGame, y: 60, x:30});
+  carrot.mesh.visible = true;
+  obstacle.mesh.visible = false;
+  clearInterval(levelInterval);
+}
+
 function gameOver(){
   fieldGameOver.className = "show";
   gameStatus = "gameOver";
@@ -1062,6 +1058,7 @@ function replay(){
   gameStatus = "preparingToReplay"
   
   fieldGameOver.className = "";
+  fieldGameWin.className = "";
   
   TweenMax.killTweensOf(monster.pawFL.position);
   TweenMax.killTweensOf(monster.pawFR.position);
@@ -1235,6 +1232,11 @@ function updateDistance(){
   distance += delta*speed;
   var d = distance/2;
   fieldDistance.innerHTML = Math.floor(d);
+  if(distance >= 2000){
+    document.getElementById("winshow").style.display = "block";
+    gameWin();
+  }
+  console.log(distance);
 }
 
 function updateLevel(){
@@ -1311,7 +1313,7 @@ function resetGame(){
 function initUI(){
   fieldDistance = document.getElementById("distValue");
   fieldGameOver = document.getElementById("gameoverInstructions");
-  
+  fieldGameWin = document.getElementById("gameoverInstructions");
 }
 
 
