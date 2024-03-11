@@ -14,8 +14,8 @@ var distance = 0;
 var level = 1;
 var levelInterval;
 var levelUpdateFreq = 3000;
-var initSpeed = 5;
-var maxSpeed = 48;
+var initSpeed = 2;
+var maxSpeed = 30;
 var monsterPos = .65;
 var monsterPosTarget = .65;
 var floorRotation = 0;
@@ -27,7 +27,7 @@ var cameraPosGameOver = 260;
 var monsterAcceleration = 0.004;
 var malusClearColor = 0xb44b39;
 var malusClearAlpha = 0;
-var audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/Antonio-Vivaldi-Summer_01.mp3');
+var audio = new Audio('https://firebasestorage.googleapis.com/v0/b/ocd-project-c9444.appspot.com/o/alexander-nakarada-silly.mp3?alt=media&token=3200e721-920b-42f9-abaa-1468968b9bb9');
 
 var fieldGameOver, fieldDistance;
 
