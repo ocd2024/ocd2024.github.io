@@ -27,7 +27,7 @@ var cameraPosGameOver = 260;
 var monsterAcceleration = 0.004;
 var malusClearColor = 0xb44b39;
 var malusClearAlpha = 0;
-var audio = new Audio('https://firebasestorage.googleapis.com/v0/b/ocd-project-c9444.appspot.com/o/alexander-nakarada-silly.mp3?alt=media&token=3200e721-920b-42f9-abaa-1468968b9bb9');
+var audio = new Audio('https://firebasestorage.googleapis.com/v0/b/ocd-project-c9444.appspot.com/o/best-adventure-ever-122726.mp3?alt=media&token=7adf18d5-b75a-4517-a49c-71dbb38c7f3e');
 
 var fieldGameOver, fieldDistance;
 
