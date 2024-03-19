@@ -1235,7 +1235,7 @@ function updateDistance(){
   distance += delta*speed;
   var d = distance/2;
   fieldDistance.innerHTML = Math.floor(d);
-  if(distance >= 1000){
+  if(distance >= 400){
     document.getElementById("winshow").style.display = "block";
     gameWin();
   }
